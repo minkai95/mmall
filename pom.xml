@@ -90,6 +90,7 @@
       <version>1.9.12</version>
     </dependency>
 
+    <!-- 添加数据库连接池依赖 -->
     <dependency>
       <groupId>commons-dbcp</groupId>
       <artifactId>commons-dbcp</artifactId>
