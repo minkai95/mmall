@@ -1,7 +1,11 @@
 package com.mmall.dao;
 
 import com.mmall.pojo.Category;
+import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
+@Repository
 public interface CategoryMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +18,6 @@ public interface CategoryMapper {
     int updateByPrimaryKeySelective(Category record);
 
     int updateByPrimaryKey(Category record);
+
+    List<Category> selectCategoryChildrenByParentId(Integer parentId);
 }
