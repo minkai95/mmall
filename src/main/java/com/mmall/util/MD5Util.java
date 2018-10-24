@@ -1,5 +1,6 @@
 package com.mmall.util;
 
+import ch.qos.logback.core.util.FileUtil;
 import org.springframework.core.io.support.PropertiesLoaderUtils;
 
 import java.security.MessageDigest;
@@ -51,7 +52,7 @@ public class MD5Util {
     }
 
     public static String MD5EncodeUtf8(String origin){
-        origin = origin + "kanesdafagj23ou89ZXcj@#$@#$#@KDjklj;D../d5F.,";
+        origin = origin + PropertiesUtil.getProperty("password.salt");
         return MD5Encode(origin,"utf-8");
     }
 }
