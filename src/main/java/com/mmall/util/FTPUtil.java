@@ -42,6 +42,7 @@ public class FTPUtil {
         FileInputStream fis = null;
         // 连接ftp服务器
         if (connectServer(this.ip,this.port,this.user,this.psw)){
+            logger.info("FTP服务器连接OK");
             try {
                 ftpClient.changeWorkingDirectory(remotePath);
                 ftpClient.setBufferSize(1024);
@@ -51,6 +52,7 @@ public class FTPUtil {
                 for (File fileItem:fileList) {
                     fis = new FileInputStream(fileItem);
                     ftpClient.storeFile(fileItem.getName(),fis);
+                    logger.info("上传了一个文件OK");
                 }
             } catch (IOException e) {
                 uploaded = false;
