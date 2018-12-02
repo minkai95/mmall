@@ -63,6 +63,8 @@ public class FTPUtil {
                 }
                 ftpClient.disconnect();
             }
+        }else {
+            uploaded = false;
         }
         return uploaded;
     }
